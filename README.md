@@ -13,10 +13,6 @@ Fast and simple to setup mtproto proxy.
 
 To advertise a channel get a tag from **@MTProxybot** and write it to *config.py*.
 
-## 使用注意 ##
-1. 如果作为APP内置代理，AD_TAG 不能设置，设置后无法登录
-2. 建议使用 systemd 来启动 mptrotoproxy
-
 ## Performance ##
 
 The proxy performance should be enough to comfortably serve about 4 000 simultaneous users on
@@ -29,3 +25,13 @@ The proxy can be launched:
 - several times, clients will be automaticaly balanced between instances
 - using *PyPy* interprteter
 - with runtime statistics exported for [Prometheus](https://prometheus.io/): using [prometheus](https://github.com/alexbers/mtprotoproxy/tree/prometheus) branch
+
+## 使用注意 ##
+1. 如果作为APP内置代理，AD_TAG 不能设置，设置后无法登录
+2. 建议使用 systemd 来启动 mptrotoproxy
+
+- `cp mtproxy.service /etc/systemd/system/`
+- `systemctl daemon-reload`
+- `systemctl restart mtproxy.service`
+- `systemctl status mtproxy.service`
+- `systemctl enable mtproxy.service`
