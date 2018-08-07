@@ -13,6 +13,10 @@ Fast and simple to setup mtproto proxy.
 
 To advertise a channel get a tag from **@MTProxybot** and write it to *config.py*.
 
+## 使用注意 ##
+1. 如果作为APP内置代理，AD_TAG 不能设置，设置后无法登录
+2. 建议使用 systemd 来启动 mptrotoproxy
+
 ## Performance ##
 
 The proxy performance should be enough to comfortably serve about 4 000 simultaneous users on
